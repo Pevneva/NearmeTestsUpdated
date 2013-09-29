@@ -1,0 +1,40 @@
+package ru.st.selenium.applogic;
+
+import static org.junit.Assert.fail;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class WebDriverHelper {
+
+	private static RemoteWebDriver driver;
+	private StringBuffer verificationErrors = new StringBuffer();
+	private final ApplicationManager manager;
+/*
+  protected WebDriver driver;
+  protected WebDriverWait wait;
+*/
+  public DriverBasedHelper(ApplicationManager manager) throws Exception{
+  
+	this.manager = manager;
+	
+	DesiredCapabilities caps = new DesiredCapabilities();
+	//caps.setCatability("proxy", manager.getProxyHelper().getProxy());
+	
+	String browser = manager.getProperty("browser");
+	if ("firefox".equals(browser)){
+		//driver = new FirefoxDriver(caps);
+		caps.setBrowserName("firefox");
+		driver = new RemoteWebDriver(caps);
+	} else if ("ie".equals(browser)){
+		driver = new InternetExplorerDriver(caps);
+	}  else if ("chrome".equals(browser)){
+		driver = new ChromeDriver(caps);
+	}  else if ("opers".equals(browser)){
+		driver = new OperaDriver(caps);
+	}
+	driver.setLogLevel(Level.INFO);
+	
+  }
+  
+}
