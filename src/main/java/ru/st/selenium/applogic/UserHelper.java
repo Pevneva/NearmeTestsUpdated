@@ -145,11 +145,14 @@ public class UserHelper extends DriverBasedHelper {
 			}
 */		
 		manager.getNavigationHelper().gotoUsersPage();
+		wait.until(presenceOfElementLocated(byKeywordsFieldOnUsersPage));
 		WebElement keywords = driver.findElement(byKeywordsFieldOnUsersPage);
 		keywords.clear();
 		keywords.sendKeys(user.getEmail());
 
+		wait.until(presenceOfElementLocated(byResultTable));
 		WebElement resultTable = driver.findElement(byResultTable);
+		wait.until(presenceOfElementLocated(bySearchButton));
 		WebElement searchButton = driver.findElement(bySearchButton);
 		searchButton.click();
 		wait.until(ExpectedConditions.stalenessOf(resultTable));
