@@ -38,14 +38,20 @@ public class BusinessHelper extends DriverBasedHelper {
 		manager.getNavigationHelper().gotoBusinessesPage();
 
 		//entering keywords to 'Keywords' field
+		System.out.println("entering keywords to 'Keywords' field...");
 		driver.findElement(By.id("keywords")).clear();
 		driver.findElement(By.id("keywords")).sendKeys(keywords);
+		System.out.println("OK!");	
 		
+		wait.until(ExpectedConditions.presenceOfElementLocated(byResultTable));
 		WebElement resultTable = driver.findElement(byResultTable);
+		System.out.println("Waiting for apperance of Search Button and clicking...");	
+		wait.until(ExpectedConditions.presenceOfElementLocated(bySearchButton));
 		WebElement searchButton = driver.findElement(bySearchButton);
 		searchButton.click();
 		wait.until(ExpectedConditions.stalenessOf(resultTable));
 		wait.until(presenceOfElementLocated(byResultTable));
+		System.out.println("OK!");	
 
 		WebElement deleteButton = driver.findElement(byDeleteButton);
 		WebElement selectAllCheckbox = driver.findElement(bySelectAllCheckbox);
