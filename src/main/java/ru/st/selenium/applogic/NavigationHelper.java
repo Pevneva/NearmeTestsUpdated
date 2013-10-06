@@ -62,6 +62,7 @@ public class NavigationHelper extends DriverBasedHelper{
   
     public void gotoBusinessesPage() {
 	driver.findElement(By.cssSelector("#registrationsTab > span.nav_btn_text")).click();
+	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("keyword")));
   }
   
   public void gotoUsersPage() {

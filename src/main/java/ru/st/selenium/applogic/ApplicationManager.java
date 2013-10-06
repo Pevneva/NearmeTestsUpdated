@@ -24,6 +24,7 @@ import ru.st.selenium.model.Emailclient;
 
 import java.util.logging.*;
 import java.util.logging.Level;
+import java.util.concurrent.TimeUnit;
 
 
 public class ApplicationManager {
@@ -71,7 +72,7 @@ public class ApplicationManager {
 	} catch (MalformedURLException e) {}
 */	
 	
-    // driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //	driver.setLogLevel(Level.INFO);
 	driver.manage().window().maximize();
 	
