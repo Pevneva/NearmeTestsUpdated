@@ -2,6 +2,7 @@ package ru.st.selenium.applogic;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 import ru.st.selenium.applogic.NavigationHelper;
 
@@ -61,8 +62,11 @@ public class NavigationHelper extends DriverBasedHelper{
   }
   
     public void gotoBusinessesPage() {
-	driver.findElement(By.cssSelector("#registrationsTab > span.nav_btn_text")).click();
-	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("keyword")));
+    	System.out.println("Going to Businesses tab...");	
+    	//wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#registrationsTab > span.nav_btn_text")));
+    	driver.findElement(By.cssSelector("#registrationsTab > span.nav_btn_text")).click();
+    	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("keywords")));
+    	System.out.println("OK!");	
   }
   
   public void gotoUsersPage() {
