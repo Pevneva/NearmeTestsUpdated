@@ -36,6 +36,7 @@ public class NavigationHelper extends DriverBasedHelper{
  	System.out.println("Opening Sig Up page...");	
 	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@href='/nearme-portal/signup']")));
 	driver.findElement(By.xpath("//a[@href='/nearme-portal/signup']")).click();
+	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("firstName")));
 	System.out.println("OK!");	
   }
   
@@ -62,17 +63,17 @@ public class NavigationHelper extends DriverBasedHelper{
   }
   
     public void gotoBusinessesPage() {
-    	System.out.println("Going to Businesses tab...");	
+	
      	driver.findElement(By.cssSelector("#registrationsTab > span.nav_btn_text")).click();
     	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("keywords")));
-    	System.out.println("OK!");	
+
   }
   
   public void gotoUsersPage() {
-  	System.out.println("Going to Businesses tab...");	  
+	  
 	driver.findElement(By.cssSelector("#usersTab > span.nav_btn_text")).click();
 	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("keywords")));	
-	System.out.println("OK!");		
+	
   }
   
   public void openRelativeUrl(String url) {

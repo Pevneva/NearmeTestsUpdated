@@ -181,6 +181,7 @@ public class BusinessHelper extends DriverBasedHelper {
 	System.out.println("--------------------");
 	//filling Venue Details section
 	System.out.println("Filling Venue Details section...");
+	wait.until(presenceOfElementLocated(By.id("displayName")));
     driver.findElement(By.id("displayName")).clear();
     driver.findElement(By.id("displayName")).sendKeys(venue.getUrlName());
     driver.findElement(By.id("advKey")).clear();

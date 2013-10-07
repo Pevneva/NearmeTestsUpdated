@@ -31,13 +31,13 @@ public class EmailclientHelper extends DriverBasedHelper {
 	//waiting some time
     try {Thread.sleep(2000);} catch (Exception e) {};
 	//going to test email
+    wait.until(presenceOfElementLocated(By.id("mailbox__login")));
     driver.findElement(By.id("mailbox__login")).clear();
     driver.findElement(By.id("mailbox__login")).sendKeys(email.getEmail());	
     driver.findElement(By.id("mailbox__password")).clear();
     driver.findElement(By.id("mailbox__password")).sendKeys(email.getPassword());
     driver.findElement(By.id("mailbox__auth__button")).click();
 	wait.until(presenceOfElementLocated(By.xpath("//div[@class='toolbar__action']")));
-	//div[@class='toolbar__action']
 	System.out.println("OK!");	
  }
  
@@ -45,6 +45,7 @@ public class EmailclientHelper extends DriverBasedHelper {
  	//opening last messages
 	System.out.println("Opening last message...");		
 	driver.findElement(By.cssSelector("span.messageline__body__name")).click();
+	wait.until(presenceOfElementLocated(By.id("action_buttons")));
 	System.out.println("OK!");	
  }
  
