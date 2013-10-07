@@ -334,8 +334,8 @@ public void openBusiness(String tradeName)	{
 	System.out.println("OK!");
 	
 //	checking that venue page will be opened
-	System.out.println("Checking that venue page will be opened...");
-	wait.until(presenceOfElementLocated(By.xpath("//div[@class='share']")));
+	System.out.println("Checking that business page will be opened...");
+	wait.until(presenceOfElementLocated(By.xpath("//div[@class='info_details__description']")));
 	System.out.println("OK!");
 }
 
