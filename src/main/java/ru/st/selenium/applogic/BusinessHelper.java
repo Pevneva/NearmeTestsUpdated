@@ -342,6 +342,7 @@ public void openBusiness(String tradeName)	{
 public void clickYesletsgetstartedLink() {
 //	clicking on the 'Yes, lets get started' link
 	System.out.println("clicking on the 'Yes, lets get started' link...");
+	wait.until(presenceOfElementLocated(By.linkText("Yes, lets get started")));
     driver.findElement(By.linkText("Yes, lets get started")).click();
 	wait.until(presenceOfElementLocated(By.id("title")));
 	System.out.println("OK!");
