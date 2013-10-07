@@ -304,6 +304,7 @@ public class BusinessHelper extends DriverBasedHelper {
     driver.findElement(By.cssSelector("#registrationsTab > span.nav_btn_text")).click();
 	System.out.println("OK!");
 	//entering <Trade Name> text to 'Keywords' field
+	wait.until(presenceOfElementLocated(By.id("keywords")));
 	driver.findElement(By.id("keywords")).clear();
     driver.findElement(By.id("keywords")).sendKeys(TradeName);
 	//clicking on Search icon
@@ -335,6 +336,7 @@ public void openBusiness(String tradeName)	{
 //	checking that venue page will be opened
 	System.out.println("Checking that venue page will be opened...");
 	wait.until(presenceOfElementLocated(By.xpath("//div[@class='share']")));
+	System.out.println("OK!");
 }
 
 public void clickYesletsgetstartedLink() {

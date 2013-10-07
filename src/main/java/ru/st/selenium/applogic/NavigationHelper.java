@@ -102,6 +102,7 @@ public class NavigationHelper extends DriverBasedHelper{
   public void gotoOffersTab() {
 //	clicking on the Offers tab	
 	System.out.println("clicking on the Offers tab...");
+	wait.until(presenceOfElementLocated(By.xpath("//a[contains(text(),'Offers')]")));
 	driver.findElement(By.xpath("//a[contains(text(),'Offers')]")).click();
 	System.out.println("OK!");  
   }
@@ -109,13 +110,7 @@ public class NavigationHelper extends DriverBasedHelper{
 	public void checkStartPage() {
 	
 	wait.until(presenceOfElementLocated(By.xpath("//div[@class='home-login-container']")));
-	/*
-		for (int second = 0;; second++) {
-			if (second >= 60) fail("timeout");
-			try { if (isElementPresent(By.xpath("//div[@class='home-login-container']"))) break; } catch (Exception e) {}
-			Thread.sleep(1000);
-			}
-			*/
+
 	}	  
 
 }
