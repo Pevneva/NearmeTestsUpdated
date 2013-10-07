@@ -290,7 +290,7 @@ public class BusinessHelper extends DriverBasedHelper {
 	System.out.println("OK!");	
 	//checking that venue page will be opened
 	System.out.println("Checking that venue page will be opened...");
-	wait.until(presenceOfElementLocated(By.xpath("//div[@class=\"photo_video\"]")));
+	wait.until(presenceOfElementLocated(By.xpath("//div[@class='share']")));
 
 	System.out.println("OK!");
 	System.out.println("VENUE WAS CREATED!");
@@ -334,7 +334,7 @@ public void openBusiness(String tradeName)	{
 	
 //	checking that venue page will be opened
 	System.out.println("Checking that venue page will be opened...");
-	wait.until(presenceOfElementLocated(By.xpath("//div[@class=\"photo_video\"]")));
+	wait.until(presenceOfElementLocated(By.xpath("//div[@class='share']")));
 }
 
 public void clickYesletsgetstartedLink() {
@@ -731,7 +731,7 @@ public void finalRegistrationStepOfOnlineRegistration() throws Exception {
 	//clicking on the 'Venue' tab
     driver.findElement(By.linkText("Venue")).click();	
 	//checking that venue page will be opened
-	wait.until(presenceOfElementLocated(By.xpath("//div[@class=\"photo_video\"]")));
+	wait.until(presenceOfElementLocated(By.xpath("//div[@class='share']")));
 	manager.getUserHelper().logout();
 	System.out.println("OK!");
 }
