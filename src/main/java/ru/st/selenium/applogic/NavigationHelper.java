@@ -34,8 +34,8 @@ public class NavigationHelper extends DriverBasedHelper{
 	gotoLoginPage();
 	
  	System.out.println("Opening Sig Up page...");	
-	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@href='/nearme-portal/signup']")));
-	driver.findElement(By.xpath("//a[@href='/nearme-portal/signup']")).click();
+	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='title']/a")));
+	driver.findElement(By.xpath("//div[@class='title']/a")).click();
 	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("firstName")));
 	System.out.println("OK!");	
   }
