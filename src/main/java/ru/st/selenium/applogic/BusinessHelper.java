@@ -365,7 +365,9 @@ public void clickFinishButton() {
 public void clickCreateofferButton() {
 //	clicking on the 'Create Offer' button
 	System.out.println("clicking on the 'create offer' button...");
+	wait.until(presenceOfElementLocated(By.cssSelector("a.add_button > span")));
     driver.findElement(By.cssSelector("a.add_button > span")).click();
+    wait.until(presenceOfElementLocated(By.id("title")));
  	System.out.println("OK!");
 }
 
