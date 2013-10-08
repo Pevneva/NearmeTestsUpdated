@@ -352,6 +352,7 @@ public void clickCreateanotherofferlink() {
 //	clicking on the 'Create another Offer' link
 	System.out.println("clicking on the 'Create another Offer' link...");
     driver.findElement(By.linkText("Create another Offer")).click();
+    wait.until(presenceOfElementLocated(By.id("title")));
  	System.out.println("OK!");
 }
 
